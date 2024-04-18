@@ -11,7 +11,6 @@
     "@playwright/test": "^1.42.1",
     "@types/node": "^20.11.30"
   },
-  "type": "module",
   "dependencies": {
     "@cucumber/cucumber": "^10.4.0",
     "chai": "^5.1.0"

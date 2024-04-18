@@ -1,4 +1,5 @@
-const {test, expect} = require('@playwright/test')
+const {test, expect} = require('@playwright/test');
+const { link } = require('fs');
 
 
 test('test if apply freelance in page' , async({page}) => {
@@ -13,9 +14,10 @@ test('test if apply freelance in page' , async({page}) => {
   await page.getByText('Apply to freelance').click();
 
   await page.waitForEvent('load')
-  const button = await page.$('a.button:has-text("Apply to freelance")');
+ 
+  const button  = await page.getByRole('link', { name: 'Apply to freelance'})
   const buttonText = await button.textContent();
   console.log('Button text:', buttonText);
-  // Assert that the button exists
   expect(button).not.toBeNull();
+
 });
